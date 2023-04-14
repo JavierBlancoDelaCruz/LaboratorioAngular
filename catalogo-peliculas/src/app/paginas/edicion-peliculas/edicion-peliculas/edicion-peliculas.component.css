@@ -1,0 +1,54 @@
+h1 {
+  text-align: center;
+  font-size: 36px;
+  color: #333;
+}
+
+.movie-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+  padding-top: 23px;
+}
+
+.movie-card {
+  width: 35%;
+  margin-bottom: 25px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  /* padding:20px; */
+}
+
+.movie-card img {
+  width: 100%;
+  cursor: pointer;
+}
+
+.movie-card p {
+  padding: 10px;
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  text-align: center;
+}
+
+.movie-card :nth-child(2){
+  padding-bottom: 5px;
+}
+.movie-card p strong {
+  font-size: 23px;
+  font-weight: bold;
+  color: #333;
+}
+.movie-card :last-child{
+  padding-bottom: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .movie-card {
+    width: 48%;
+  }
+}

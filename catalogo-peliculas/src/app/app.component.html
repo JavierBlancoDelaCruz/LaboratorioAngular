@@ -1,0 +1,32 @@
+<!-- Header -->
+<header class="toolbar">
+  <img
+    width="45"
+    alt="Catálogo películas Logo"
+    src="https://static.vecteezy.com/system/resources/previews/013/532/369/original/film-roll-transparent-free-png.png"
+  />
+  <nav><strong>{{ title }}</strong>
+    | <a routerLink="/" style="color:rgba(255, 255, 255, 0.76)">Inicio</a> <!-- Sutituye a: <app-listado-peliculas></app-listado-peliculas> -->
+  </nav>
+
+  <div class="spacer"></div>
+  <a href="https://github.com/JavierBlancoDelaCruz" title="GitHub Javier Blanco">
+    <img
+      width="25"
+      alt="GitHub logo"
+      src="https://cdn-icons-png.flaticon.com/512/25/25231.png"
+    />
+  </a>
+</header>
+
+<div class="content" role="main">
+
+  <router-outlet></router-outlet>
+
+</div>
+
+  <!-- Footer -->
+  <footer style="text-align: center">
+    <p>- Javier Blanco De la Cruz -</p>
+  </footer>
+

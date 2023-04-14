@@ -1,0 +1,14 @@
+<!-- {{peliculas | json}} -->
+
+<h1>CATÁLOGO DE PELÍCULAS</h1>
+<hr/>
+<div class="contenedor">
+  <div *ngFor="let peli of peliculas" class="movie-container">
+    <div class="movie-card">
+      <img src={{peli.poster}} alt="Portada pelicula" (click)="edicionPelicula(peli)"> <!-- Se puede hacer src={{peli.poster}} o [src]=peli.poster -->
+      <p>{{ peli.year }}</p>
+      <p><strong>{{ peli.name }}</strong></p>
+      <p>{{ peli.director }}</p>
+    </div>
+  </div>
+</div>

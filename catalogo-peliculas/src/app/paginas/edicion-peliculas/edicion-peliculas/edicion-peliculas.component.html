@@ -1,0 +1,19 @@
+<h1>EDICIÓN DE PELÍCULA</h1>
+<hr/>
+
+<div>
+
+  <div class="movie-container">
+    <div *ngIf="pelicula" class="movie-card">
+      <img width="85" src={{pelicula.poster}} alt="Poster pelicula">
+      <p>{{ pelicula.year }}</p>
+      <p><strong>{{ pelicula.name }}</strong></p>
+      <p>{{ pelicula.director }}</p>
+    </div>
+  </div>
+
+
+  <app-formulario-edicion></app-formulario-edicion>
+
+
+</div>

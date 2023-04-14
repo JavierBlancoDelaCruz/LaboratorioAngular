@@ -1,0 +1,63 @@
+  <form [formGroup]="formPelicula" (ngSubmit)="onSubmit()">
+
+    <div>
+      <label for="name">Título de la película:</label>
+      <input id="name" type="text" formControlName="name">
+      <div *ngIf="formPelicula.get('name')?.invalid && (formPelicula.get('name')?.dirty || formPelicula.get('name')?.touched)"
+           [ngClass]="{'error': formPelicula.get('name')?.errors}">
+        <div *ngIf="formPelicula.get('name')?.errors?.['required']">
+          * Es obligatorio poner un título.
+        </div>
+        <div *ngIf="formPelicula.get('name')?.errors?.['minlength']">
+          * El título no debe ser inferior a 3 caracteres.
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <label for="poster">URL Portada:</label>
+      <input type="text" id="poster" formControlName="poster">
+      <div *ngIf="formPelicula.get('poster')?.invalid && (formPelicula.get('poster')?.dirty || formPelicula.get('poster')?.touched)"
+           [ngClass]="{'error': formPelicula.get('poster')?.errors}">
+        <div *ngIf="formPelicula.get('poster')?.errors?.['required']">
+          * Es obligatorio poner una URL de la imagen.
+        </div>
+        <div *ngIf="formPelicula.get('poster')?.errors?.['pattern']">
+          * URL no válida. Ejemplo: "http//tupagina.es"
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <label for="year">Año de estreno:</label>
+      <input type="number" id="year" formControlName="year">
+      <div *ngIf="formPelicula.get('year')?.invalid && (formPelicula.get('year')?.dirty || formPelicula.get('year')?.touched)"
+           [ngClass]="{'error': formPelicula.get('year')?.errors}">
+        <div *ngIf="formPelicula.get('year')?.errors?.['required']">
+          * Esobligatorio poner un año.
+        </div>
+        <div *ngIf="formPelicula.get('year')?.errors?.['min']">
+          * El año introducido debe ser 1900 como mínimo.
+        </div>
+        <div *ngIf="formPelicula.get('year')?.errors?.['max']">
+          * El año introducido debe ser 2100 como máximo.
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <label for="director">Director de la peícula:</label>
+      <input type="text" id="director" formControlName="director">
+      <div *ngIf="formPelicula.get('director')?.invalid && (formPelicula.get('director')?.dirty || formPelicula.get('director')?.touched)" [ngClass]="{'error': formPelicula.get('director')?.errors}">
+        <div *ngIf="formPelicula.get('director')?.errors?.['required']">
+          * Es obligatorio introducir un director.
+        </div>
+        <div *ngIf="formPelicula.get('director')?.errors?.['minlength']">
+          * El director no debe ser inferior a 3 caracteres.
+        </div>
+      </div>
+    </div>
+
+    <button type="submit">Guardar</button>
+
+  </form>
